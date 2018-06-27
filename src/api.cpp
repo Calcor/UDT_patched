@@ -2416,7 +2416,7 @@ int epoll_wait(int eid, set<UDTSOCKET>* readfds, set<UDTSOCKET>* writefds, int64
 }
 
 #define SET_RESULT(val, num, fds, it) \
-   if ((val != NULL) && !val->empty()) \
+   if ((val != NULL) ) \
    { \
       if (*num > static_cast<int>(val->size())) \
          *num = val->size(); \

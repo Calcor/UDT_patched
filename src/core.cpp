@@ -2237,6 +2237,8 @@ void CUDT::processCtrl(CPacket& ctrlpkt)
       // Signal the sender and recver if they are waiting for data.
       releaseSynch();
 
+	  s_UDTUnited.m_EPoll.update_events(m_SocketID, m_sPollID, UDT_EPOLL_IN | UDT_EPOLL_OUT | UDT_EPOLL_ERR, true);
+
       CTimer::triggerEvent();
 
       break;
